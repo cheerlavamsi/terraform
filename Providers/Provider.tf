@@ -2,3 +2,7 @@ provider "aws"{
 
 
 }
+
+provider "mysql"{
+    
+}

@@ -4,6 +4,6 @@ variable "Sample" {
 resource "null_resource" "Sample" {
   
   provisioner "local-exec"{
-      command="echo${var.Sample}"
+      command="echo ${var.Sample}"
   }
 }

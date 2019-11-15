@@ -12,10 +12,10 @@ resource "aws_instance" "web" {
                 host        = self.public_ip
         }
         inline = [
-                "cd/temp",
+
+            "cd/temp",
             "git clone https://github.com/cheerlavamsi/Shell_Scripts.git",
             "sh /tmp/MonolithicServices/Install.sh",
         ]
     }
 }
-

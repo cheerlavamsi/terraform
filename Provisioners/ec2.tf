@@ -15,7 +15,7 @@ resource "aws_instance" "web" {
 
             "cd/temp",
             "git clone https://github.com/cheerlavamsi/Shell_Scripts.git",
-            "sh /tmp/MonolithicServices/Install.sh",
+            "sh /Shell_Scripts/MonolithicServices/Install.sh",
         ]
     }
 }

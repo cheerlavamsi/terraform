@@ -11,6 +11,6 @@ variable "Sample" {
 resource "null_resource" "Sample" {
   
   provisioner "local-exec"{
-      command="echo welcome to ${var.Sample["Course_Name"]} training, training is ${var.Sample["Timings"]} and Attander is ${var.Sample["Attander"]}"
+      command="echo welcome to ${var.Sample["Course_Name"]} training, Timings is ${var.Sample["Timings"]} and Attender is ${var.Sample["Attender"]}"
   }
 }

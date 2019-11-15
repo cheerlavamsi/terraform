@@ -1,6 +1,6 @@
 variable "Sample" {
     type = "list"
-    default = ["Vamsi","Samalya"]
+    default = ["Vamsi", "Samalya"]
   }
 resource "null_resource" "SaPmple" {
   

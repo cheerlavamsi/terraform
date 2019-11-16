@@ -7,3 +7,12 @@ variable "instance_type" {
     default = "t2.micro"
   
 }
+
+variable "tags" {
+    type="map"
+    default={
+        env="DEV"
+        Project_Name="Sam Demo"
+    }
+  
+}

@@ -3,7 +3,7 @@ resource "aws_instance" "web" {
     instance_type   = var.instance_type
     tags            = {
     
-        Name        = ${var.tags["Project_Name"]}-${var.tags["env"]}
-    }
-     
+        Name        = "${var.tags["Project_Name"]}-${var.tags["env"]}"
+    } 
+
 }

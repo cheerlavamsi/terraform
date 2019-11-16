@@ -17,5 +17,6 @@ module "RDS" {
   RDS_PASSWORD        = var.RDS_PASSWORD
   RDS_DBNAME          = var.RDS_DBNAME
   tags                = var.tags
+  RDS_ENDPOINT        = var.RDS_ENDPOINT
 }
 

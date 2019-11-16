@@ -1,9 +1,9 @@
 resource "aws_instance" "web" {
-    ami             = var.ami
-    instance_type   = var.instance_type
-    tags            = {
-    
-        Name        = "${var.tags["Project_Name"]}-${var.tags["env"]}"
+    ami                     = var.ami
+    instance_type           = var.instance_type
+    vpc_security_group_ids  = ["sg-09734e0ae6147a09b","sg-098fd4a5ffc0e66b6"]
+    tags                    = {
+            Name            = "${var.tags["Project_Name"]}-${var.tags["env"]}"
     } 
 
 provisioner "remote-exec"{

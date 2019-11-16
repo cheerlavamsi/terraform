@@ -9,10 +9,10 @@ variable "instance_type" {
 }
 
 variable "tags" {
-    type="map"
-    default={
-        env="DEV"
-        Project_Name="Sam Demo"
+    type    = "map"
+    default =   {
+        env =   "DEV"
+        Project_Name    =     "Sam Demo"
     }
   
 }

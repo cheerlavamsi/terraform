@@ -1,10 +1,10 @@
-variable "Sample" {
-    type = "list"
-    default = ["Vamsi", "Samalya"]
-  }
-resource "null_resource" "SaPmple" {
-  
-  provisioner "local-exec"{
-      command= "echo ${var.Sample[1]}" 
+variable "sample" {
+  type    = "list"
+  default = ["vamsi", "samalya"]
+}
+
+resource "null_resource" "sample" {
+  provisioner "local-exec" {
+    command = "echo ${var.sample[0]}"
   }
 }

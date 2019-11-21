@@ -1,6 +1,6 @@
 # ------------------
 # TERRAFORM-MAKEFILE
-# v0.12.5
+# v0.12.6
 # ------------------
 #
 # Terraform makefile is a helper to run terraform commands

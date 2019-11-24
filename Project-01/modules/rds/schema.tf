@@ -15,6 +15,6 @@ resource "null_resource" "schema" {
     command = <<EOF
         sudo yum install mariadb -y
         mysql -h ${aws_db_instance.default.addres} -u${var.RDS_USERNAME} -p${var.RDS_PASSWORD} </tmp/schema.sql
-        EOF
+EOF
   }
 }

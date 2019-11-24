@@ -1,6 +1,6 @@
 provider "aws" {
-  alias  = "oregon"
-  region = "us-west-2"
+  alias  = "N. Virginia"
+  region = "us-east-1"
 }
 
 terraform {

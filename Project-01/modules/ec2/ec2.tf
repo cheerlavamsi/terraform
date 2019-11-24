@@ -17,8 +17,9 @@ provisioner "remote-exec"{
         inline = [
 
             "cd/temp",
-            "git clone https://github.com/cheerlavamsi/Shell_Scripts.git",
-            "sh /root/Shell_Scripts/MonolithicServices/webapp.sh ${var.RDS_USERNAME} ${var.RDS_PASSWORD} ${var.RDS_DBNAME} ${var.RDS_ENDPOINT}",
+            "yum install ansible -y",
+            "echo localhost >/tmp/hosts",
+            "ansible-pull -i /tmp/hosts -U https://github.com/cheerlavamsi/ansible.git Projects/Studentapp/Webapp.yml -e DBUSER=${var.RDS_USERNAME} -e DBPASS=${var.RDS_PASSWORD} -e DBHOST=${var.RDS_ENDPOINT} -e DBNAME=${var.RDS_DBNAME}",
         ]
     }
 }

@@ -26,7 +26,7 @@ module "RDS" {
   //}
 }
 
-module "SG" {
-  source              = "../modules/sg"
-  VPC_CIDR            = var.VPC_CIDR
-}
+#module "SG" {
+#  source              = "../modules/sg"
+#  VPC_CIDR            = var.VPC_CIDR
+#}

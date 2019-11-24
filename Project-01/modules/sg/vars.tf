@@ -1,1 +1,0 @@
-variable "VPC_CIDR" {}

@@ -9,8 +9,3 @@ variable "RDS_USERNAME" {}
 variable "RDS_PASSWORD" {}
 variable "RDS_DBNAME" {}
 variable "VPC_CIDR" {}
-
-
-
-
-

@@ -32,7 +32,7 @@ resource "null_resource" "schema" {
 
     inline = [
       "echo localhost >/tmp/hosts",
-      "ansible-pull -i /tmp/hosts -U https://rkb03:password@gitlab.com/dops42/ansible.git projects/studentapp/schema.yml -e DBUSER=${var.RDS_USERNAME} -e DBPASS=${var.RDS_PASSWORD} -e DBHOST=${aws_db_instance.default.address}"
+      "ansible-pull -i /tmp/hosts -U https://github.com/cheerlavamsi/ansible.git Projects/Studentapp/schema.yml -e DBUSER=${var.RDS_USERNAME} -e DBPASS=${var.RDS_PASSWORD} -e DBHOST=${aws_db_instance.default.address}"
     ]
   }
 }

@@ -1,6 +1,6 @@
 data "aws_s3_bucket_object" "schema-file" {
   //provider = aws
-  bucket            = "d42-resources"
+  bucket            = "d42-student"
   key               = "studentapp-ui-rds.sql"
 }
 

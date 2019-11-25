@@ -19,7 +19,7 @@ module "RDS" {
   RDS_PASSWORD        = var.RDS_PASSWORD
   RDS_DBNAME          = var.RDS_DBNAME
   tags                = var.tags
-  //SG_RDS_MYSQL_INT    = module.SG.SG_RDS_MYSQL_INT
+  SG_RDS_MYSQL_INT    = module.SG.SG_RDS_MYSQL_INT
   SERVER_FOR_SCHEMA   = module.EC2.SERVER_FOR_SCHEMA
   //providers = {
   //  aws = aws.oregon

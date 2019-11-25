@@ -7,8 +7,8 @@ module "EC2" {
   RDS_USERNAME        = var.RDS_USERNAME
   RDS_PASSWORD        = var.RDS_PASSWORD
   RDS_DBNAME          = var.RDS_DBNAME
-  //SG_SSH_PUB          = module.SG.SG_SSH_PUB
-  //SG_WEB_PUB          = module.SG.SG_WEB_PUB
+  SG_SSH_PUB          = module.SG.SG_SSH_PUB
+  SG_WEB_PUB          = module.SG.SG_WEB_PUB
 }
 
 module "RDS" {

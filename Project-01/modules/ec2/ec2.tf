@@ -1,7 +1,7 @@
 resource "aws_instance" "web" {
   ami                               = var.ami
   instance_type                     = var.instance_type
-  #vpc_security_group_ids            = [ var.SG_WEB_PUB, var.SG_SSH_PUB ]
+  vpc_security_group_ids            = [ var.SG_WEB_PUB, var.SG_SSH_PUB ]
   tags                              = {
     Name                            = "${var.tags["project_name"]}-${var.tags["env"]}"
   }

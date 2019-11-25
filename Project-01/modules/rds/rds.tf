@@ -8,7 +8,7 @@ resource "aws_db_instance" "default" {
   username                  = var.RDS_USERNAME
   password                  = var.RDS_PASSWORD
   parameter_group_name      = "default.mariadb10.3"
-  identifier                = "${lower(var.tags["project_name"])}-${lower(var.tags["env"])}-mariadb"
+  identifier                = "${lower(var.tags["project_name"])}-${lower(var.tags["env"])}-mariadb1"
   vpc_security_group_ids    = [var.SG_RDS_MYSQL_INT]
   skip_final_snapshot       = true
 }

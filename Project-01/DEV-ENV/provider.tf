@@ -5,7 +5,7 @@ provider "aws" {
   region = "us-west-2"
 }
 
-terrform {
+terraform {
   backend "s3" {
     bucket  = "d42-student"
     key     = "terraform-remote-states/proj-01/terraform.tfstate"

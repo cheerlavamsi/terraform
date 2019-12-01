@@ -10,7 +10,7 @@ data "aws_vpc" "foo" {
 }
 
 variable "new" {
-  type = "list"
+  type = list
   default = ["a", "b"]
 }
 

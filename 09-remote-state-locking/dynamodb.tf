@@ -7,7 +7,7 @@ resource "null_resource" "sample" {
 terraform {
   backend "s3" {
     bucket = "d42-student"
-    key    = "terraform-remote-states/sample-locking/terraform.json"
+    key    = "terraform-remote-states/sample-locking/terraform.tfstate"
     region = "us-east-1"
     dynamodb_table = "terraform-locking"
   }

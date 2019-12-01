@@ -5,5 +5,5 @@ resource "aws_default_vpc" "default" {
 }
 
 output "vpc" {
-  value = data.aws_default_vpc.id
+  value = aws_default_vpc.default.id
 }

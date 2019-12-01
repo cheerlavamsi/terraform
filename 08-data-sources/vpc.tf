@@ -1,5 +1,12 @@
 data "aws_vpcs" "foo" {}
 
+resource "aws_default_vpc" "default" {
+  tags = {
+    Name = "Default VPC"
+  }
+}
+
+
 locals {
   vpcs = tolist(data.aws_vpcs.foo.ids)
 }

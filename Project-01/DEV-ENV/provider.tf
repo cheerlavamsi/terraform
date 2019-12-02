@@ -10,6 +10,6 @@ terraform {
     bucket  = "d42-student"
     key     = "terraform-remote-states/proj-01/terraform.tfstate"
     region  = "us-east-1"
-    #dynamodb_table = "terraform-up-and-running-locks"
+    dynamodb_table = "terraform-up-and-running-locks"
   }
 }

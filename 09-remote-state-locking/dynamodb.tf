@@ -1,14 +1,12 @@
-resource "null_resource" "sample" {
-  provisioner "local-exec" {
-    command = "sleep 120"
+resource "aws_dynamodb_table" "terraform_state_lock" {
+  name    = "terraform-lock"
+  read_capacity = 5
+  write_capacity  = 5
+  hash_key    = "LOCKID"
+  attribute {
+    name    = "LOCKID"
+    type  = "s"
   }
+  
 }
 
-terraform {
-  backend "s3" {
-    bucket = "d42-student"
-    key    = "terraform-remote-states/proj-01/terraform.tfstate"
-    region = "us-east-1"
-    dynamodb_table = "terraform-locking"
-  }
-}

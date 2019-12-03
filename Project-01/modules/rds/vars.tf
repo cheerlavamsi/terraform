@@ -4,7 +4,7 @@ variable "RDS_USERNAME" {}
 variable "RDS_PASSWORD" {}
 variable "RDS_DBNAME" {}
 variable "tags" {
-  type = map
+  type = "map"
 }
 
 variable "SG_RDS_MYSQL_INT" {}

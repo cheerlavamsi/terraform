@@ -7,7 +7,7 @@ resource "null_resource" "create-email-subscription" {
 
   provisioner "local-exec" {
     when = "destroy"
-    command = "aws sns unsubscribe --subscription-arn"
+    command = "sh ${path.module}/delete-subscriptions.sh ${aws_sns_topic.monitoring-emails-notify.arn}"
     
   }
 }

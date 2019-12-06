@@ -21,12 +21,20 @@ module "RDS" {
   tags                = var.tags
   SG_RDS_MYSQL_INT    = module.SG.SG_RDS_MYSQL_INT
   SERVER_FOR_SCHEMA   = module.EC2.SERVER_FOR_SCHEMA
+
   //providers = {
   //  aws = aws.oregon
   //}
 }
 
 module "SG" {
-  source              = "../modules/sg"
-  VPC_CIDR            = var.VPC_CIDR
+  source                = "../modules/sg"
+  VPC_CIDR              = var.VPC_CIDR
 }
+
+module "SNS" {
+  source                  = "../modules/sns"
+  SNS_SUBSCRIPTION_EMAIL  = var.SNS_SUBSCRIPTION_EMAIL
+  
+}
+

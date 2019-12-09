@@ -10,7 +10,36 @@ resource "aws_cloudwatch_metric_alarm" "ec2-cpu-alarm" {
   alarm_description         = "This metric monitors ec2 cpu utilization for ${var.SERVER_ID} Instance"
   actions_enabled           = "true"
   alarm_actions             = [var.SNS_ARN]
-  //dimensions = {
-    //InstanceId = var.SERVER_ID
-  //}
+  dimensions = {
+    InstanceId = var.SERVER_ID
+  }
+}
+
+
+resource "aws_cloudwatch_metric_alarm" "web-process-alert" {
+  alarm_name                = "aws_ec2_${var.SERVER_ID}_${local.tag}_web_process_alert"
+  comparison_operator       = "LessThanThreshold"
+  evaluation_periods        = 2
+  threshold                 = 2
+  metric_name               = "Web-Process"
+  namespace                 = "System-Process"
+  period                    = "60"
+  alarm_description         = "This metric monitors web process in ec2 for ${var.SERVER_ID} Instance"
+  actions_enabled           = "true"
+  alarm_actions             = [var.SNS_ARN]
+  statistic                 = "Minimum"
+}
+
+resource "aws_cloudwatch_metric_alarm" "java-process-alert" {
+  alarm_name                = "aws_ec2_${var.SERVER_ID}_${local.tag}_java_process_alert"
+  comparison_operator       = "LessThanThreshold"
+  evaluation_periods        = 2
+  threshold                 = 1
+  metric_name               = "Java-Process"
+  namespace                 = "System-Process"
+  period                    = "60"
+  alarm_description         = "This metric monitors Java process in ec2 for ${var.SERVER_ID} Instance"
+  actions_enabled           = "true"
+  alarm_actions             = [var.SNS_ARN]
+  statistic                 = "Minimum"
 }

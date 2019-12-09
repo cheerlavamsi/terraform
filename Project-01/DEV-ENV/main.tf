@@ -38,3 +38,12 @@ module "SNS" {
   
 }
 
+module "CLOUDWATCH" {
+  source                    = "../modules/cloudwatch"
+  tags                      = var.tags
+  SERVER_ID                 = module.EC2.SERVER_ID
+  SNS_ARN                   = module.SNS.SNS_ARN
+}
+
+
+

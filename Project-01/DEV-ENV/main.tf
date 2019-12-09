@@ -1,14 +1,15 @@
 module "EC2" {
-  source              = "../modules/ec2"
-  ami                 = var.ami
-  instance_type       = var.instance_type
-  tags                = var.tags
-  RDS_ENDPOINT        = module.RDS.RDS_ENDPOINT
-  RDS_USERNAME        = var.RDS_USERNAME
-  RDS_PASSWORD        = var.RDS_PASSWORD
-  RDS_DBNAME          = var.RDS_DBNAME
-  SG_SSH_PUB          = module.SG.SG_SSH_PUB
-  SG_WEB_PUB          = module.SG.SG_WEB_PUB
+  source                = "../modules/ec2"
+  ami                   = var.ami
+  instance_type         = var.instance_type
+  tags                  = var.tags
+  RDS_ENDPOINT          = module.RDS.RDS_ENDPOINT
+  RDS_USERNAME          = var.RDS_USERNAME
+  RDS_PASSWORD          = var.RDS_PASSWORD
+  RDS_DBNAME            = var.RDS_DBNAME
+  SG_SSH_PUB            = module.SG.SG_SSH_PUB
+  SG_WEB_PUB            = module.SG.SG_WEB_PUB
+  EC2-INSTANCE-PROFILE  = module.IAM.EC2-INSTANCE-PROFILE
 }
 
 module "RDS" {
@@ -45,5 +46,9 @@ module "CLOUDWATCH" {
   SNS_ARN                   = module.SNS.SNS_ARN
 }
 
+module "IAM" {
+  source                    = "../modules/iam"
+  tags                      = var.tags
+}
 
 

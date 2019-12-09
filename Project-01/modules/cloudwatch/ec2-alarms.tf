@@ -8,9 +8,9 @@ resource "aws_cloudwatch_metric_alarm" "ec2-cpu-alarm" {
   statistic                 = "Average"
   threshold                 = "80"
   alarm_description         = "This metric monitors ec2 cpu utilization for ${var.SERVER_ID} Instance"
-  actions_enabled           = "true"
-  alarm_actions             = [var.SNS_ARN]
-  dimensions = {
-    InstanceId = var.SERVER_ID
-  }
+  //actions_enabled           = "true"
+  //alarm_actions             = [var.SNS_ARN]
+  //dimensions = {
+    //InstanceId = var.SERVER_ID
+  //}
 }

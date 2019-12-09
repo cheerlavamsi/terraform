@@ -10,6 +10,7 @@ module "EC2" {
   SG_SSH_PUB            = module.SG.SG_SSH_PUB
   SG_WEB_PUB            = module.SG.SG_WEB_PUB
   EC2-INSTANCE-PROFILE  = module.IAM.EC2-INSTANCE-PROFILE
+  AWS_REGION            = var.AWS_REGION
 }
 
 module "RDS" {

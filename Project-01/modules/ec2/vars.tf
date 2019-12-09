@@ -11,4 +11,6 @@ variable "RDS_ENDPOINT" {}
 variable "SG_SSH_PUB" {}
 variable "SG_WEB_PUB" {}
 variable "EC2-INSTANCE-PROFILE" {}
+variable "AWS_REGION" {}
+
 

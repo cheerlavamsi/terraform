@@ -10,3 +10,6 @@ variable "RDS_PASSWORD" {}
 variable "RDS_DBNAME" {}
 variable "VPC_CIDR" {}
 variable "SNS_SUBSCRIPTION_EMAIL" {}
+variable "EC2-INSTANCE-PROFILE" {}
+variable "AWS_REGION" {}
+

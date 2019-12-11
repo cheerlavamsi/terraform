@@ -32,7 +32,7 @@ resource "aws_cloudwatch_metric_alarm" "web-process-alert" {
 
 resource "aws_cloudwatch_metric_alarm" "java-process-alert" {
   alarm_name                = "aws_ec2_${var.SERVER_ID}_${local.tag}_java_process_alert"
-  comparison_operator       = "LessThanThreshold"
+  comparison_operator       = "LessThanThreshold" 
   evaluation_periods        = 2
   threshold                 = 1
   metric_name               = "Java-Process"

@@ -11,6 +11,7 @@ module "EC2" {
   SG_WEB_PUB            = module.SG.SG_WEB_PUB
   EC2-INSTANCE-PROFILE  = module.IAM.EC2-INSTANCE-PROFILE
   AWS_REGION            = var.AWS_REGION
+  VAULT_PASS            = var.VAULT_PASS
 }
 
 module "RDS" {

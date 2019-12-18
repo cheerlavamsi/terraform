@@ -1,5 +1,5 @@
 module "VPC" {
-  source                    = "../modules/vpc"
+  source                    = "../modules/VPC"
   tags                      = var.tags
   VPC_CIDR                  = var.VPC_CIDR
 }

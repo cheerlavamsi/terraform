@@ -1,3 +1,9 @@
+module "VPC" {
+  source                    = "../modules/vpc"
+  tags                      = var.tags
+  VPC_CIDR                  = var.VPC_CIDR
+}
+
 module "EC2" {
   source                = "../modules/ec2"
   ami                   = var.ami

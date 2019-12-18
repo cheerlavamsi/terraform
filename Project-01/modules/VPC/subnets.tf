@@ -8,3 +8,9 @@ resource "aws_subnet" "public-subnets" {
     Name                  = "${var.tags["project_name"]}-${var.tags["env"]}-public-subnet-${count.index+1}"
   }
 }
+
+resource "aws_route_table_association" "a" {
+  count                   = length(data.aws_availability_zones.available.zone_ids)
+  subnet_id               = element(aws_subnet.public-subnets.*.id, count.index )
+  route_table_id          = aws_route_table.r.id
+}

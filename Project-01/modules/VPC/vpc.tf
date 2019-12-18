@@ -4,3 +4,12 @@ resource "aws_vpc" "main" {
     Name        = "${var.tags["project_name"]}-${var.tags["env"]}-vpc"
   }
 }
+
+resource "aws_internet_gateway" "gw" {
+  vpc_id        = aws_vpc.main.id
+
+  tags          = {
+    Name        =  "${var.tags["project_name"]}-${var.tags["env"]}-igw"
+  }
+}
+

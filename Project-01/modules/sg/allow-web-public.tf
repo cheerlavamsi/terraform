@@ -1,6 +1,7 @@
 resource "aws_security_group" "allow-web-public" {
   name        = "allow_web_public"
   description = "Allow WEB Access for PUBLIC"
+  vpc_id      = var.VPCID
 
   ingress {
     from_port   = 80

@@ -1,6 +1,7 @@
 resource "aws_security_group" "allow-ssh-public" {
   name        = "allow_ssh_public"
   description = "Allow SSH Access for PUBLIC"
+  vpc_id      = var.VPCID
 
   ingress {
     from_port   = 22

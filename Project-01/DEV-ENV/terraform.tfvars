@@ -6,5 +6,5 @@ RDS_INSTANCE_TYPE       = "db.t2.micro"
 RDS_USERNAME            = "student"
 RDS_PASSWORD            = "student1"
 RDS_DBNAME              = "studentapp"
-VPC_CIDR                = "172.31.0.0/16"
+VPC_CIDR                = "10.0.20.0/16"
 SNS_SUBSCRIPTION_EMAIL  =   ["chvamsi.devops@gmail.com"]

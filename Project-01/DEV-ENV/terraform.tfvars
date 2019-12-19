@@ -1,4 +1,4 @@
-ami                     = "ami-02383135f96b2293e"
+ami                     = "ami-07e9dd794ba08fd2b"
 instance_type           = "t2.small"
 tags                    = {"project_name":"StudentApp","env":"DEV"}
 RDS_DB_SIZE             = 20

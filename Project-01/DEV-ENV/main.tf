@@ -56,6 +56,7 @@ module "CLOUDWATCH" {
   tags                      = var.tags
   SERVER_ID                 = module.EC2.SERVER_ID
   SNS_ARN                   = module.SNS.SNS_ARN
+  INSTANCE_COUNT            = var.instance_count
 }
 
 module "IAM" {

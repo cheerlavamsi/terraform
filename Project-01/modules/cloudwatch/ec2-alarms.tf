@@ -11,8 +11,8 @@ resource "aws_cloudwatch_metric_alarm" "ec2-cpu-alarm" {
   alarm_description         = "This metric monitors ec2 cpu utilization for ${element(var.SERVER_ID, count.index)} Instance"
   actions_enabled           = "true"
   alarm_actions             = [var.SNS_ARN]
-  dimensions = {
-    InstanceId = var.SERVER_ID
+  dimensions                = {
+    InstanceId              = ${element(var.SERVER_ID, count.index)}
   }
 }
 

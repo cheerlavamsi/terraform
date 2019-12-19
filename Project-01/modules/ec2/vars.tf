@@ -13,6 +13,12 @@ variable "SG_WEB_PUB" {}
 variable "EC2-INSTANCE-PROFILE" {}
 variable "AWS_REGION" {}
 variable "VAULT_PASS" {}
+variable "PUBLIC_SUBNETS" {
+  type  = "list"
+}
+variable "INSTANCE_COUNT" {}
+
+
 
 
 

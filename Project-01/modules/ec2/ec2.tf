@@ -1,7 +1,9 @@
 resource "aws_instance" "web" {
+  count                             = var.INSTANCE_COUNT
   ami                               = var.ami
   instance_type                     = var.instance_type
   vpc_security_group_ids            = [ var.SG_WEB_PUB, var.SG_SSH_PUB ]
+  subnet_id                         = element(var.PUBLIC_SUBNETS, count.index)
   iam_instance_profile              = var.EC2-INSTANCE-PROFILE
   tags                              = {
     Name                            = "${var.tags["project_name"]}-${var.tags["env"]}"

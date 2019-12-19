@@ -1,5 +1,6 @@
 ami                     = "ami-07e9dd794ba08fd2b"
 instance_type           = "t2.small"
+instance_count          =   1
 tags                    = {"project_name":"StudentApp","env":"DEV"}
 RDS_DB_SIZE             = 20
 RDS_INSTANCE_TYPE       = "db.t2.micro"

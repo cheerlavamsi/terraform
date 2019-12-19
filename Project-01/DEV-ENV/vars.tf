@@ -12,5 +12,7 @@ variable "VPC_CIDR" {}
 variable "SNS_SUBSCRIPTION_EMAIL" {}
 variable "AWS_REGION" {}
 variable "VAULT_PASS" {}
+variable "instance_count" {}
+
 
 

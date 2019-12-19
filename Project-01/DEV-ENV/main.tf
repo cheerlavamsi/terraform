@@ -18,6 +18,8 @@ module "EC2" {
   EC2-INSTANCE-PROFILE  = module.IAM.EC2-INSTANCE-PROFILE
   AWS_REGION            = var.AWS_REGION
   VAULT_PASS            = var.VAULT_PASS
+  PUBLIC_SUBNETS        = module.VPC.PUBLIC_SUBNETS
+  INSTANCE_COUNT        = var.instance_count
 }
 
 module "RDS" {

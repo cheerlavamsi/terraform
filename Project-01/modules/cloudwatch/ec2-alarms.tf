@@ -1,5 +1,6 @@
 resource "aws_cloudwatch_metric_alarm" "ec2-cpu-alarm" {
-  alarm_name                = "aws_ec2_${var.SERVER_ID}_${local.tag}_cpu_utilization"
+  count                     = var.INSTANCE_COUNT
+  alarm_name                = "aws_ec2_${element(var.SERVER_ID, count.index)}_${local.tag}_cpu_utilization"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   evaluation_periods        = "2"
   metric_name               = "CPUUtilization"
@@ -7,7 +8,7 @@ resource "aws_cloudwatch_metric_alarm" "ec2-cpu-alarm" {
   period                    = "120"
   statistic                 = "Average"
   threshold                 = "80"
-  alarm_description         = "This metric monitors ec2 cpu utilization for ${var.SERVER_ID} Instance"
+  alarm_description         = "This metric monitors ec2 cpu utilization for ${element(var.SERVER_ID, count.index)} Instance"
   actions_enabled           = "true"
   alarm_actions             = [var.SNS_ARN]
   dimensions = {
@@ -17,28 +18,30 @@ resource "aws_cloudwatch_metric_alarm" "ec2-cpu-alarm" {
 
 
 resource "aws_cloudwatch_metric_alarm" "web-process-alert" {
-  alarm_name                = "aws_ec2_${var.SERVER_ID}_${local.tag}_web_process_alert"
+  count                     = var.INSTANCE_COUNT
+  alarm_name                = "aws_ec2_${element(var.SERVER_ID, count.index)}_${local.tag}_web_process_alert"
   comparison_operator       = "LessThanThreshold"
   evaluation_periods        = 2
   threshold                 = 2
   metric_name               = "Web-Process"
   namespace                 = "System-Process"
   period                    = "60"
-  alarm_description         = "This metric monitors web process in ec2 for ${var.SERVER_ID} Instance"
+  alarm_description         = "This metric monitors web process in ec2 for ${element(var.SERVER_ID, count.index)} Instance"
   actions_enabled           = "true"
   alarm_actions             = [var.SNS_ARN]
   statistic                 = "Minimum"
 }
 
 resource "aws_cloudwatch_metric_alarm" "java-process-alert" {
-  alarm_name                = "aws_ec2_${var.SERVER_ID}_${local.tag}_java_process_alert"
+  count                     = var.INSTANCE_COUNT
+  alarm_name                = "aws_ec2_${element(var.SERVER_ID, count.index)}_${local.tag}_java_process_alert"
   comparison_operator       = "LessThanThreshold" 
   evaluation_periods        = 2
   threshold                 = 1
   metric_name               = "Java-Process"
   namespace                 = "System-Process"
   period                    = "60"
-  alarm_description         = "This metric monitors Java process in ec2 for ${var.SERVER_ID} Instance"
+  alarm_description         = "This metric monitors Java process in ec2 for ${element(var.SERVER_ID, count.index)} Instance"
   actions_enabled           = "true"
   alarm_actions             = [var.SNS_ARN]
   statistic                 = "Minimum"

@@ -12,7 +12,7 @@ resource "aws_cloudwatch_metric_alarm" "ec2-cpu-alarm" {
   actions_enabled           = "true"
   alarm_actions             = [var.SNS_ARN]
   dimensions                = {
-    InstanceId              = ${element(var.SERVER_ID, count.index)}
+  InstanceId              = element(var.SERVER_ID, count.index)
   }
 }
 

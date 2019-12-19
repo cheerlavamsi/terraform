@@ -11,6 +11,7 @@ resource "aws_db_instance" "default" {
   identifier                = "${lower(var.tags["project_name"])}-${lower(var.tags["env"])}-mariadb"
   vpc_security_group_ids    = [var.SG_RDS_MYSQL_INT]
   skip_final_snapshot       = true
+  db_subnet_group_name      = aws_db_subnet_group.mariadb-subnet-group.name
 }
 
 

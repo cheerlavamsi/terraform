@@ -9,3 +9,7 @@ variable "tags" {
 
 variable "SG_RDS_MYSQL_INT" {}
 variable "SERVER_FOR_SCHEMA" {}
+variable "PRIVATE_SUBNETS" {
+  type    = "list"
+}
+

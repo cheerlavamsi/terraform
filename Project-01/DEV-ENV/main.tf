@@ -30,6 +30,7 @@ module "RDS" {
   tags                = var.tags
   SG_RDS_MYSQL_INT    = module.SG.SG_RDS_MYSQL_INT
   SERVER_FOR_SCHEMA   = module.EC2.SERVER_FOR_SCHEMA
+  PRIVATE_SUBNETS     = module.VPC.PRIVATE_SUBNETS
 
   //providers = {
   //  aws = aws.oregon

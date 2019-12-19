@@ -18,6 +18,9 @@ variable "PUBLIC_SUBNETS" {
 }
 variable "INSTANCE_COUNT" {}
 
+variable "SSH_USER" {}
+variable "SSH_KEY" {}
+
 
 
 

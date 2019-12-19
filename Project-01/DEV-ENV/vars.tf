@@ -13,6 +13,9 @@ variable "SNS_SUBSCRIPTION_EMAIL" {}
 variable "AWS_REGION" {}
 variable "VAULT_PASS" {}
 variable "instance_count" {}
+variable "SSH_USER" {}
+variable "SSH_KEY" {}
+
 
 
 

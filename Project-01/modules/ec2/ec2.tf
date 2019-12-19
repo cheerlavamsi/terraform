@@ -5,16 +5,18 @@ resource "aws_instance" "web" {
   vpc_security_group_ids            = [ var.SG_WEB_PUB, var.SG_SSH_PUB ]
   subnet_id                         = element(var.PUBLIC_SUBNETS, count.index)
   iam_instance_profile              = var.EC2-INSTANCE-PROFILE
+  key_name                          = "Devops"
   tags                              = {
     Name                            = "${var.tags["project_name"]}-${var.tags["env"]}"
   }
 
   provisioner "remote-exec" {
     connection {
-      type     = "ssh"
-      user     = "root"
-      password = "DevOps321"
-      host     = self.public_ip
+      type        = "ssh"
+      user        = var.SSH_USER
+      //password  = "DevOps321"
+      private_key = file(var.SSH_KEY)
+      host         = self.public_ip
     }
 
     inline = [

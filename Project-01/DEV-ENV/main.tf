@@ -20,6 +20,8 @@ module "EC2" {
   VAULT_PASS            = var.VAULT_PASS
   PUBLIC_SUBNETS        = module.VPC.PUBLIC_SUBNETS
   INSTANCE_COUNT        = var.instance_count
+  SSH_USER              = var.SSH_USER
+  SSH_KEY               = var.SSH_KEY
 }
 
 module "RDS" {

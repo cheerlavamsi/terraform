@@ -46,7 +46,7 @@ terraform   := $(shell command -v terraform 2> /dev/null)
 .PHONY: dev-apply
 dev-apply: ## Apply it on Dev Environment
 	@cd DEV-ENV && terraform init
-	@cd DEV-ENV && terraform apply -auto-approve -var AWS_REGION=${AWS_DEFAULT_REGION} -var VAULT_PASS=${VAULT_PASS}
+	@cd DEV-ENV && terraform apply -auto-approve -var AWS_REGION=${AWS_DEFAULT_REGION} -var VAULT_PASS=${VAULT_PASS} -var SSH_USER=${SSH_USR} -var SSH_KEY=${SSH}
 
 
 .PHONY: dev-destroy

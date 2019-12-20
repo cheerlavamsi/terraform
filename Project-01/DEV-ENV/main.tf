@@ -66,4 +66,12 @@ module "IAM" {
   tags                      = var.tags
 }
 
+module "ES" {
+  source                    = "../modules/elastic"
+  PRIVATE_SUBNETS           = module.VPC.PRIVATE_SUBNETS
+  tags                      = var.tags
+  SG_ES_INT                 = module.SG.SG_ES_INT
+
+}
+
 

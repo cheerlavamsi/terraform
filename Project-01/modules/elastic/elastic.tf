@@ -11,4 +11,9 @@ resource "aws_elasticsearch_domain" "domain" {
     security_group_ids = [ var.SG_ES_INT ]
   }
 
+    ebs_options {
+    ebs_enabled = true
+    volume_size = 10
+  }
+
 }

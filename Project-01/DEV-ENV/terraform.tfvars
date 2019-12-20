@@ -1,4 +1,4 @@
-ami                     = "ami-07e9dd794ba08fd2b"
+ami                     = "ami-0ae75460021c23d13"
 instance_type           = "t2.small"
 instance_count          =   1
 tags                    = {"project_name":"StudentApp","env":"DEV"}

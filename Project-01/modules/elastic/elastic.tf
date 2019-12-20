@@ -16,4 +16,18 @@ resource "aws_elasticsearch_domain" "domain" {
     volume_size = 10
   }
 
+   access_policies = <<CONFIG
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": "es:*",
+            "Principal": "*",
+            "Effect": "Allow",
+            "Resource": "arn:aws:es:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:domain/${lower(var.tags["project_name"])}-es/*"
+        }
+    ]
+}
+CONFIG
+
 }

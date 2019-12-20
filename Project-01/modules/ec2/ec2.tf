@@ -23,8 +23,8 @@ resource "aws_instance" "web" {
       "cd /tmp",
       "sudo yum install ansible -y",
       "echo localhost >/tmp/hosts",
-      "echo ${var.VAULT_PASS} > /home/root/.vault",
-      "ansible-pull -i /tmp/hosts -U https://github.com/cheerlavamsi/ansible.git Projects/Studentapp/Webapp.yml -e DBUSER=${var.RDS_USERNAME} -e DBPASS=${var.RDS_PASSWORD} -e DBHOST=${var.RDS_ENDPOINT} -e DBNAME=${var.RDS_DBNAME} -e AWS_REGION=${var.AWS_REGION} --vault-password-file /home/root/.vault"
+      "echo ${var.VAULT_PASS} > /root/.vault",
+      "ansible-pull -i /tmp/hosts -U https://github.com/cheerlavamsi/ansible.git Projects/Studentapp/Webapp.yml -e DBUSER=${var.RDS_USERNAME} -e DBPASS=${var.RDS_PASSWORD} -e DBHOST=${var.RDS_ENDPOINT} -e DBNAME=${var.RDS_DBNAME} -e AWS_REGION=${var.AWS_REGION} --vault-password-file /root/.vault"
     ]
   }
 

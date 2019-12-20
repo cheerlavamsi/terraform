@@ -15,7 +15,7 @@ resource "aws_instance" "web" {
       type        = "ssh"
       user        = var.SSH_USER
       //password  = "DevOps321"
-      private_key = file("/tmp/out")
+      private_key = file(var.SSH_KEY)
       host         = self.public_ip
     }
 

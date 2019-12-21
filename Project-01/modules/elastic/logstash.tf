@@ -2,7 +2,7 @@ resource "aws_instance" "logstash" {
   count                             = 1
   ami                               = var.ami
   instance_type                     = "t2.medium"
-  vpc_security_group_ids            = [ var.SG_WEB_PUB, var.SG_SSH_PUB ]
+  vpc_security_group_ids            = [ var.SG_WEB_PUB, var.SG_SSH_PUB, var.SG_LS_INT ]
   subnet_id                         = element(var.PUBLIC_SUBNETS, count.index)
   key_name                          = "Devops"
   tags                              = {

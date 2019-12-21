@@ -16,3 +16,5 @@ variable "SG_SSH_PUB" {}
 variable "SG_WEB_PUB" {}
 variable "SSH_USER" {}
 variable "SSH_KEY" {}
+variable "SG_LS_INT" {}
+

@@ -77,6 +77,7 @@ module "ES" {
   SG_WEB_PUB                = module.SG.SG_WEB_PUB
   PUBLIC_SUBNETS            = module.VPC.PUBLIC_SUBNETS
   ami                       = var.ami
+  SG_LS_INT                 = module.SG.SG_LS_INT
 
 }
 

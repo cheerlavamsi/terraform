@@ -71,6 +71,12 @@ module "ES" {
   PRIVATE_SUBNETS           = module.VPC.PRIVATE_SUBNETS
   tags                      = var.tags
   SG_ES_INT                 = module.SG.SG_ES_INT
+  SSH_USER                  = var.SSH_USER
+  SSH_KEY                   = var.SSH_KEY
+  SG_SSH_PUB                = module.SG.SG_SSH_PUB
+  SG_WEB_PUB                = module.SG.SG_WEB_PUB
+  PUBLIC_SUBNETS            = module.VPC.PUBLIC_SUBNETS
+  ami                       = var.ami
 
 }
 

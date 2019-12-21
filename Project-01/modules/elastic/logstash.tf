@@ -21,7 +21,7 @@ provisioner "remote-exec" {
       "cd /tmp",
       "sudo yum install ansible -y",
       "echo localhost >/tmp/hosts",
-      "ansible-pull -i /tmp/hosts -U https://github.com/cheerlavamsi/ansible.git Projects/Studentapp/logstash.yml -e ES_URL=${aws_elasticsearch_domain.domain.endpoint}"
+      "ansible-pull -i /tmp/hosts -U https://github.com/cheerlavamsi/ansible.git Projects/Studentapp/logstash.yml -e ES_URL=${aws_elasticsearch_domain.domain.endpoint}",
     ]
   }
 

@@ -4,7 +4,7 @@ resource "aws_instance" "logstash" {
   instance_type                     = "t2.medium"
   vpc_security_group_ids            = [ var.SG_WEB_PUB, var.SG_SSH_PUB ]
   subnet_id                         = element(var.PUBLIC_SUBNETS, count.index)
-  key_name                          = "devops"
+  key_name                          = "Devops"
   tags                              = {
     Name                            = "${var.tags["project_name"]}-logstash"
   }

@@ -54,6 +54,17 @@ dev-destroy: ## Destroy DEV Environment
 	@cd DEV-ENV && terraform init
 	@cd DEV-ENV && terraform destroy -auto-approve
 
+.PHONY: test-apply
+test-apply: ## Apply it on Dev Environment
+	@cd TEST-ENV && terraform init
+	@cd TEST-ENV && terraform apply -auto-approve -var AWS_REGION=${AWS_DEFAULT_REGION} -var VAULT_PASS=${VAULT_PASS} -var SSH_USER=${SSH_USR} -var SSH_KEY=${SSH}
+
+
+.PHONY: test-destroy
+test-destroy: ## Destroy DEV Environment
+	@cd TEST-ENV && terraform init
+	@cd TEST-ENV && terraform destroy -auto-approve
+
 help:
 	@printf "\033[32mTerraform-makefile v$(version)\033[0m\n\n"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'

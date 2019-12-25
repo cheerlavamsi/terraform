@@ -52,5 +52,9 @@ module "IAM" {
   tags                      = var.tags
 }
 
+resource "local_file" "hosts" {
+  filename  = "/tmp/hosts"
+  content   = module.EC2.SERVER_FOR_SCHEMA
+}
 
 

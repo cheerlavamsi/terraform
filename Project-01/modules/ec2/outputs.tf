@@ -1,5 +1,5 @@
 output "SERVER_FOR_SCHEMA" {
-  value = aws_instance.web.public_ip
+  value = aws_instance.web.0.public_ip
 }
 
 output "SERVER_ID" {

@@ -12,4 +12,4 @@ variable "SERVER_FOR_SCHEMA" {}
 variable "PRIVATE_SUBNETS" {
   type    = "list"
 }
-
+variable "schema_bucket" {}

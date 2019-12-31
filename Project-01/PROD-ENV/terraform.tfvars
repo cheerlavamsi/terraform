@@ -1,0 +1,12 @@
+ami                     = "ami-0af83edf8de37a205"
+instance_type           = "t2.medium"
+instance_count          = 1
+tags                    = {"project_name":"StudentApp","env":"PROD"}
+RDS_DB_SIZE             = 20
+RDS_INSTANCE_TYPE       = "db.t2.medium"
+RDS_USERNAME            = "student"
+RDS_PASSWORD            = "student1"
+RDS_DBNAME              = "studentapp"
+VPC_CIDR                = "10.30.0.0/16"
+SNS_SUBSCRIPTION_EMAIL  = ["chvamsi.devops@gmail.com"]
+schema_bucket           = "d42-student"

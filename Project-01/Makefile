@@ -52,7 +52,7 @@ dev-apply: ## Apply it on Dev Environment
 .PHONY: dev-destroy
 dev-destroy: ## Destroy DEV Environment
 	@cd DEV-ENV && terraform init
-	@cd DEV-ENV && terraform destroy -auto-approve
+	@cd DEV-ENV && terraform destroy -auto-approve -var AWS_REGION=${AWS_DEFAULT_REGION} -var VAULT_PASS=${VAULT_PASS} -var SSH_USER=${SSH_USR} -var SSH_KEY=${SSH}
 
 .PHONY: test-apply
 test-apply: ## Apply it on Dev Environment
@@ -63,7 +63,14 @@ test-apply: ## Apply it on Dev Environment
 .PHONY: test-destroy
 test-destroy: ## Destroy DEV Environment
 	@cd TEST-ENV && terraform init
-	@cd TEST-ENV && terraform destroy -auto-approve
+	@cd TEST-ENV && terraform destroy -auto-approve -auto-approve -var AWS_REGION=${AWS_DEFAULT_REGION} -var VAULT_PASS=${VAULT_PASS} -var SSH_USER=${SSH_USR} -var SSH_KEY=${SSH}
+
+.PHONY: prod-apply
+prod-apply: ## Apply it on Prod Environment
+	@cd PROD-ENV && terraform init
+	@pwd
+	@cd PROD-ENV && terraform apply -auto-approve -var AWS_REGION=${AWS_DEFAULT_REGION} -var VAULT_PASS=${VAULT_PASS} -var SSH_USER=${SSH_USR} -var SSH_KEY=${SSH}
+
 
 help:
 	@printf "\033[32mTerraform-makefile v$(version)\033[0m\n\n"

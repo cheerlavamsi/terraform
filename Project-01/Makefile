@@ -70,7 +70,10 @@ prod-apply: ## Apply it on Prod Environment
 	@cd PROD-ENV && terraform init
 	@pwd
 	@cd PROD-ENV && terraform apply -auto-approve -var AWS_REGION=${AWS_DEFAULT_REGION} -var VAULT_PASS=${VAULT_PASS} -var SSH_USER=${SSH_USR} -var SSH_KEY=${SSH}
-
+.PHONY: prod-apply
+prod-destroy: ## Destroy it on Prod Environment
+	@cd PROD-ENV && terraform init
+	@cd PROD-ENV && terraform destroy -auto-approve -var AWS_REGION=${AWS_DEFAULT_REGION} -var VAULT_PASS=${VAULT_PASS} -var SSH_USER=${SSH_USR} -var SSH_KEY=${SSH}
 
 help:
 	@printf "\033[32mTerraform-makefile v$(version)\033[0m\n\n"

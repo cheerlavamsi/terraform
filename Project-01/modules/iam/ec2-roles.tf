@@ -1,5 +1,5 @@
 resource "aws_iam_role" "ec2-role" {
-  name = "EC2-ROLE-${upper(var.tags["project_name"])}-PROJECT"
+  name = "EC2-ROLE-${upper(var.tags["project_name"])}-PROD-PROJECT"
 
   assume_role_policy = <<EOF
 {

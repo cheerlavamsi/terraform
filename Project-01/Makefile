@@ -80,6 +80,11 @@ r53-apply: ## SetupRoute53
 	@cd PROD-ROUTE53 && terraform init
 	@cd PROD-ROUTE53 && terraform apply -auto-approve -var ALB_DNS_NAME=${ALB_DNS_NAME}
 
+.PHONY: r53-destroy
+r53-apply: ## SetupRoute53
+	@cd PROD-ROUTE53 && terraform init
+	@cd PROD-ROUTE53 && terraform destroy -auto-approve -var ALB_DNS_NAME=${ALB_DNS_NAME}
+
 
 help:
 	@printf "\033[32mTerraform-makefile v$(version)\033[0m\n\n"

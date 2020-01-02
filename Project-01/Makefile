@@ -75,6 +75,12 @@ prod-destroy: ## Destroy it on Prod Environment
 	@cd PROD-ENV && terraform init
 	@cd PROD-ENV && terraform destroy -auto-approve -var AWS_REGION=${AWS_DEFAULT_REGION} -var VAULT_PASS=${VAULT_PASS} -var SSH_USER=${SSH_USR} -var SSH_KEY=${SSH}
 
+.PHONY: r53-apply
+r53-apply: ## SetupRoute53
+	@cd PROD-ROUTE53 && terraform init
+	@cd PROD-ROUTE53 && terraform apply -auto-approve -var ALB_DNS_NAME=${ALB_DNS_NAME}
+
+
 help:
 	@printf "\033[32mTerraform-makefile v$(version)\033[0m\n\n"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
